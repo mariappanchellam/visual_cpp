@@ -13,7 +13,7 @@ Code, Compile, Run and Debug online from anywhere in world.
 using namespace std;
 int solution(vector<int> &A)
 {
-    map<int,int> m1,m2;
+    map<long,short> m1,m2;
     int i=0;
     int len = A.size();
     // putting the first element to map;
@@ -67,6 +67,7 @@ int main()
     vector<int> G = {2, 3, 3, 2, 2, 2, 1};
    // vector<int> K ={-2,-1, 0, 5, 5, 4,-1};
     int reordercountA=solution(A);
+    cout<<reordercountA<<endl;
     /*TEST CASE */
     /*
     int reordercountB=solution(B);
