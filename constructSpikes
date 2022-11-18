@@ -1,0 +1,88 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include<map>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int solution(vector<int> &A)
+{
+    map<int,int> m1,m2;
+    int i=0;
+    int len = A.size();
+    // putting the first element to map;
+    //sort(A.begin(),A.end());
+    int max=0;
+   // m1[A[i]]++;
+    for(int i=0;i<len;i++)
+    {
+          
+        if(m1[A[i]]==1)
+        {
+              if(m2[A[i]]==0){
+                m2[A[i]]++;
+              }
+            
+        }
+        else
+        {
+             if(max<A[i])
+             {
+                 max=A[i];
+             }
+            
+             m1[A[i]]++;
+            
+        }
+    }
+  //  cout<<max;
+    int m1s=m1.size();
+    int m2s = m2.size();
+   // cout<<"m1s"<<m1.size();
+   // cout<<"m2s"<<m2.size();
+    if(m2[max]==1)
+    {
+        m2s = m2s-1;
+    }
+    return m1s+m2s;//(m1.size()+ (m2s=((m2[A[max]]==1)? m2.size()-1 : m2.size())));
+    
+}
+
+
+int main()
+{
+    printf("Hello World");
+    vector<int> A={1, 1,2,5,5, 4, 3};
+    vector<int> B ={4, 5, 7, 6, 3, 2};
+    vector<int> C= {1, 4, 3, 5};
+    vector<int> D ={3, 5, 2};
+    vector<int> E ={1, 2};
+    vector<int> F = {2, 5, 3, 2, 4, 1};
+    vector<int> G = {2, 3, 3, 2, 2, 2, 1};
+   // vector<int> K ={-2,-1, 0, 5, 5, 4,-1};
+    int reordercountA=solution(A);
+    /*TEST CASE */
+    /*
+    int reordercountB=solution(B);
+    int reordercountC=solution(C);
+    int reordercountD=solution(D);
+    int reordercountE=solution(E);
+    int reordercountF=solution(F);
+    int reordercountG=solution(G);
+    int reordercountK=solution(K);
+    cout<<reordercountA<<endl;
+    cout<<reordercountB<<endl;
+    cout<<reordercountC<<endl;
+    cout<<reordercountD<<endl;
+    cout<<reordercountE<<endl;
+    cout<<reordercountF<<endl;
+    cout<<reordercountG<<endl;
+    cout<<reordercountK<<endl;*/
+    return 0;
+}
